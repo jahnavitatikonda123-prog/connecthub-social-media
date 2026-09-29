@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ConnectHub - Social Media Platform</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="logo">
+            ConnectHub
+        </div>
+
+        <nav id="navigation"></nav>
+            <a href="#home" onclick="showHome()">Home</a>
+            <a href="#profile" onclick="showProfile()">Profile</a>
+            <a href="#users" onclick="showUsers()">Users</a>
+
+            <button onclick="logout()">
+                Logout
+            </button>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= LOGIN ================= -->
+
+    <section id="loginSection" class="auth-section">
+
+        <div class="auth-box">
+
+            <h2>Welcome to ConnectHub</h2>
+
+            <p>Login to your account</p>
+
+            <input
+                type="text"
+                id="loginUsername"
+                placeholder="Enter username"
+            >
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Enter password"
+            >
+
+            <button onclick="login()">
+                Login
+            </button>
+
+            <p>
+                Don't have an account?
+                <span onclick="showRegister()">
+                    Register
+                </span>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= REGISTER ================= -->
+
+    <section
+        id="registerSection"
+        class="auth-section hidden"
+    >
+
+        <div class="auth-box">
+
+            <h2>Create Account</h2>
+
+            <p>Join ConnectHub today</p>
+
+            <input
+                type="text"
+                id="registerUsername"
+                placeholder="Enter username"
+            >
+
+            <input
+                type="password"
+                id="registerPassword"
+                placeholder="Create password"
+            >
+
+            <textarea
+                id="registerBio"
+                placeholder="Write your bio"
+            ></textarea>
+
+            <button onclick="register()">
+                Register
+            </button>
+
+            <p>
+                Already have an account?
+                <span onclick="showLogin()">
+                    Login
+                </span>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MAIN APPLICATION ================= -->
+
+    <main id="mainApp" class="hidden">
+
+
+        <!-- ================= HOME ================= -->
+
+        <section id="home" class="container">
+
+            <h1>Home Feed</h1>
+
+
+            <!-- CREATE POST -->
+
+            <div class="create-post">
+
+                <h2>Create a Post</h2>
+
+                <textarea
+                    id="postContent"
+                    placeholder="What's on your mind?"
+                ></textarea>
+
+                <button onclick="createPost()">
+                    Post
+                </button>
+
+            </div>
+
+
+            <!-- POSTS -->
+
+            <div id="postsContainer">
+
+                <h2>Latest Posts</h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PROFILE ================= -->
+
+        <section
+            id="profile"
+            class="container"
+        >
+
+            <div class="profile-card">
+
+                <h1 id="profileUsername">
+                    Profile
+                </h1>
+
+                <p id="profileBio">
+                    Your bio
+                </p>
+
+                <p>
+                    Followers:
+                    <strong id="followerCount">
+                        0
+                    </strong>
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= USERS ================= -->
+
+        <section
+            id="users"
+            class="container"
+        >
+
+            <h1>Discover Users</h1>
+
+            <div id="usersContainer"></div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
